@@ -35,7 +35,14 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	m := beitrag{TEXT: "Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!",
 				DATUM: "29.12.2017",
 				AUTHOR: "Author",
-				COMMENTS: []string{"Kommentator: Ich bin ein Kommentar!\n","Kommentator 2: Ich bin noch ein Kommentar :P\n"}}
+				COMMENTS: []string{"Kommentator: Ich bin ein Kommentar! 29.12.2017\n","Kommentator 2: Ich bin noch ein Kommentar :P 29.12.2017\n"}}
+	t.Execute(w,m)
+
+	t, _ = template.ParseFiles("./ressources/html/beitraege.html")
+	m = beitrag{TEXT: "Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!",
+		DATUM: "29.12.2017",
+		AUTHOR: "Author",
+		COMMENTS: []string{"Kommentator: Ich bin ein Kommentar! 29.12.2017\n","Kommentator 2: Ich bin noch ein Kommentar :P 29.12.2017\n"}}
 	t.Execute(w,m)
 
 
