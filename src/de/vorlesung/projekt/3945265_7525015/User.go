@@ -18,12 +18,12 @@ type user struct{
 	isAuthor bool
 }
 
-func readUsers(){
+func readUsers() []user {
 	sum := 0
 	offset := 3
 	dat, err := ioutil.ReadFile("./ressources/users.txt")
 	check(err)
-	fmt.Print(string(dat)+"\n")
+	fmt.Print(string(dat) + "\n")
 	f, err := os.Open("./ressources/users.txt")
 	check(err)
 
@@ -31,9 +31,11 @@ func readUsers(){
 	n0, err := f.Read(b0)
 	check(err)
 	fmt.Printf("%d bytes: %s\n", n0, string(b0))
-	count := int(b0[0])-48
+	count := int(b0[0]) - 48
 
-	for sum < count{
+	var users []user
+
+	for sum < count {
 
 		_, err = f.Seek(int64(offset), 0)
 
@@ -42,16 +44,16 @@ func readUsers(){
 		check(err)
 		fmt.Printf("%d bytes: %s\n", n1, string(b1))
 
-		namelength := int(b1[0])-48
+		namelength := int(b1[0]) - 48
 		_, err = f.Seek(int64(offset+2), 0)
 		check(err)
 
-		b2 := make([]byte,1)
+		b2 := make([]byte, 1)
 		n2, err := f.Read(b2)
 		check(err)
 		fmt.Printf("%d bytes: %s\n", n2, string(b2))
 
-		passlength := int(b2[0])-48
+		passlength := int(b2[0]) - 48
 
 		_, err = f.Seek(int64(offset+4), 0)
 
@@ -60,12 +62,14 @@ func readUsers(){
 		check(err)
 		fmt.Printf("%d bytes: %s\n", n3, string(b3))
 
+
 		_, err = f.Seek(int64(offset+5+namelength), 0)
 
 		b4 := make([]byte, passlength)
 		n4, err := f.Read(b4)
 		check(err)
 		fmt.Printf("%d bytes: %s\n", n4, string(b4))
+
 
 		_, err = f.Seek(int64(offset+6+namelength+passlength), 0)
 
@@ -74,10 +78,13 @@ func readUsers(){
 		check(err)
 		fmt.Printf("%d bytes: %s\n\n", n5, string(b5))
 
+		users = append(users, user{string(b3),string(b4),int(b5[0])-48 == 0})
 
-		offset = offset+6+namelength+passlength+3
+		offset = offset + 6 + namelength + passlength + 3
 		sum++
 	}
 	f.Close()
+
+	return users
 
 }
