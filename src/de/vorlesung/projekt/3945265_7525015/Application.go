@@ -24,7 +24,7 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Print(username)
 		fmt.Print(password)
 		Users = readUsers()
-		compareUser := user{"0","0",false}
+		compareUser := user{"0","0","5"}
 		validUser := compareUser
 		for _, element := range Users{
 			if element.name == username{
@@ -34,12 +34,17 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 		if validUser != compareUser{
-			expiration := time.Now().Add(time.Hour/4)
-			cookie := http.Cookie{Name: "username", Value: validUser.name, Secure: validUser.isAuthor, Expires: expiration}
+			fmt.Print(validUser.isAuthor)
+			expiration := time.Now().Add(time.Hour)
+			cookie := http.Cookie{Name: "username", Value: validUser.name, Expires: expiration}
+			cookie2 := http.Cookie{Name: "isAuthor", Value: validUser.isAuthor, Expires: expiration}
 			http.SetCookie(w, &cookie)
+			http.SetCookie(w, &cookie2)
+			//homeHandler(w,r)
 			responseString := 	"<html>"+
 				"<body>"+
-				"WELCOME"+
+				"<h1>Programmieren II - Blog</h1><br>"+
+				"Login erfolgreich "+"<a href='/home'>Bitte Klicken</a>"+
 				"</body>"+
 				"</html>"
 			w.Write([]byte(responseString))
@@ -55,6 +60,15 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func logoutHandler(w http.ResponseWriter, r *http.Request) {
+	c,_ := r.Cookie("username")
+	c2,_ := r.Cookie("isAuthor")
+	c.Expires = time.Now()
+	c2.Expires = time.Now()
+	t, _ := template.ParseFiles("./ressources/html/logout.html")
+	t.Execute(w, nil)
+}
+
 
 var Users []user
 var username string
@@ -62,5 +76,7 @@ var password string
 
 func main() {
 	http.HandleFunc("/", mainHandler)
+	http.HandleFunc("/home/", homeHandler)
+	http.HandleFunc("/logout/",logoutHandler)
 	log.Fatalln(http.ListenAndServeTLS(":4443","./ressources/certBlog.pem" ,"./ressources/keyBlog.pem",nil))
 }

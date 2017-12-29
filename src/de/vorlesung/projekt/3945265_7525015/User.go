@@ -15,7 +15,7 @@ func check(e error) {
 type user struct{
 	name string
 	pwd string
-	isAuthor bool
+	isAuthor string
 }
 
 func readUsers() []user {
@@ -78,7 +78,7 @@ func readUsers() []user {
 		check(err)
 		fmt.Printf("%d bytes: %s\n\n", n5, string(b5))
 
-		users = append(users, user{string(b3),string(b4),int(b5[0])-48 == 0})
+		users = append(users, user{string(b3),string(b4),string(b5[0])})
 
 		offset = offset + 6 + namelength + passlength + 3
 		sum++
