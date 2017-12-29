@@ -6,7 +6,6 @@ import (
 	"os"
 	"fmt"
 	"io/ioutil"
-	"encoding/xml"
 )
 
 type login struct{
@@ -18,22 +17,14 @@ type beitrag struct{
 	TEXT string
 	DATUM string
 	AUTHOR string
-	COMMENTS []string
+	COMMENTS []comment
+}
+type comment struct{
+	TEXT string
+	DATUM string
+	AUTHOR string
 }
 
-type post struct{
-	XMLName    xml.Name `xml:"post"`
-	text string   		`xml:"text"`
-	datum   string   	`xml:"datum"`
-	author string  		`xml:"author"`
-}
-
-
-type RecurlyPost struct {
-	XMLName     xml.Name `xml:"beitrag"`
-	Svs         []post   `xml:"post"`
-	//Description string   `xml:",innerxml"`
-}
 
 
 
@@ -52,34 +43,106 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w,p)
 
 	t, _ = template.ParseFiles("./ressources/html/beitraege.html")
-/*
-	file, err := os.Open("./ressources/storage/0.xml") // For read access.
-	if err != nil {
-		fmt.Printf("error: %v", err)
-		return
+
+	var post beitrag
+
+	dat, err := ioutil.ReadFile("./ressources/storage/0.txt")
+	check(err)
+	fmt.Print(string(dat) + "\n")
+	f, err := os.Open("./ressources/storage/0.txt")
+	check(err)
+	b1 := make([]byte, 1000)
+	n1, err := f.Read(b1)
+	check(err)
+	fmt.Printf("%d bytes: %s\n", n1, string(b1))
+	post.TEXT = string(b1)
+
+	_, err = f.Seek(int64(1002), 0)
+
+
+	b2 := make([]byte, 10)
+	n2, err := f.Read(b2)
+	check(err)
+	fmt.Printf("%d bytes: %s\n", n2, string(b2))
+	post.DATUM = string(b2)
+
+	_, err = f.Seek(int64(1014), 0)
+
+	b3 := make([]byte, 1)
+	n3, err := f.Read(b3)
+	check(err)
+	fmt.Printf("%d bytes: %s\n", n3, string(b3))
+
+	namelength := int(b3[0]) - 48
+
+	_, err = f.Seek(int64(1016), 0)
+
+	b4 := make([]byte, namelength)
+	n4, err := f.Read(b4)
+	check(err)
+	fmt.Printf("%d bytes: %s\n", n4, string(b4))
+	post.AUTHOR = string(b4)
+
+	_, err = f.Seek(int64(1016+namelength+2), 0)
+
+	b0 := make([]byte, 1)
+	n0, err := f.Read(b0)
+	check(err)
+	fmt.Printf("%d bytes: %s\n", n0, string(b0))
+
+	count:=int(b0[0]) - 48
+	sum:=0
+	offset:=0
+
+	var comments []comment
+	for sum < count {
+		var com comment
+		_, err = f.Seek(int64(1016+namelength+5+offset), 0)
+
+		b5 := make([]byte, 140)
+		n5, err := f.Read(b5)
+		check(err)
+		fmt.Printf("%d bytes: %s\n", n5, string(b5))
+		com.TEXT = string(b5)
+
+		_, err = f.Seek(int64(1156+namelength+7+offset), 0)
+
+		b6 := make([]byte, 10)
+		n6, err := f.Read(b6)
+		check(err)
+		fmt.Printf("%d bytes: %s\n", n6, string(b6))
+		com.DATUM = string(b6)
+		_, err = f.Seek(int64(1166+namelength+9+offset), 0)
+
+		b7 := make([]byte, 1)
+		n7, err := f.Read(b7)
+		check(err)
+		fmt.Printf("%d bytes: %s\n", n7, string(b7))
+
+		commentatorlength := int(b7[0]) - 48
+
+		_, err = f.Seek(int64(1166+namelength+11+offset), 0)
+
+		b8 := make([]byte, commentatorlength)
+		n8, err := f.Read(b8)
+		check(err)
+		fmt.Printf("%d bytes: %s\n", n8, string(b8))
+		com.AUTHOR = string(b8)
+		comments = append(comments, com)
+		sum++
+		offset = offset + commentatorlength +140 +10 +8
 	}
-	defer file.Close()
-	data, err := ioutil.ReadAll(file)
-	if err != nil {
-		fmt.Printf("error: %v", err)
-		return
-	}
 
-	v := RecurlyPost{}
-	err = xml.Unmarshal(data, &v)
-	if err != nil {
-		fmt.Printf("error: %v", err)
-		return
-	}
-	fmt.Println(v)
+	post.COMMENTS = comments
 
-*/
+	f.Close()
 
 
-	m := beitrag{TEXT: "Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!",
-				DATUM: "29.12.2017",
-				AUTHOR: "Author",
-				COMMENTS: []string{"Kommentator: Ich bin ein Kommentar! 29.12.2017\n","Kommentator 2: Ich bin noch ein Kommentar :P 29.12.2017\n"}}
+
+	m := beitrag{TEXT: post.TEXT,
+			DATUM: post.DATUM,
+				AUTHOR: post.AUTHOR,
+				COMMENTS: post.COMMENTS}
 	t.Execute(w,m)
 
 }
