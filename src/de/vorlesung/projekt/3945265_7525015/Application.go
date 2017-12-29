@@ -6,7 +6,9 @@ import (
 	"html/template"
 	"strings"
 	"fmt"
+	"time"
 )
+
 
 func mainHandler(w http.ResponseWriter, r *http.Request) {
 	// fmt.Println("method:", r.Method) //get request method
@@ -32,6 +34,9 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 		if validUser != compareUser{
+			expiration := time.Now().Add(time.Hour/4)
+			cookie := http.Cookie{Name: "username", Value: validUser.name, Secure: validUser.isAuthor, Expires: expiration}
+			http.SetCookie(w, &cookie)
 			responseString := 	"<html>"+
 				"<body>"+
 				"WELCOME"+
