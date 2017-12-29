@@ -63,6 +63,8 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 func logoutHandler(w http.ResponseWriter, r *http.Request) {
 	c,_ := r.Cookie("username")
 	c2,_ := r.Cookie("isAuthor")
+	c.Name = "Expired"
+	c2.Name = "Expired"
 	c.Expires = time.Now()
 	c2.Expires = time.Now()
 	t, _ := template.ParseFiles("./ressources/html/logout.html")
