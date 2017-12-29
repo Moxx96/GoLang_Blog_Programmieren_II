@@ -1,0 +1,20 @@
+Anzahl der User
+Länge Name (max 9);Länge PW (max 9);Name;PW;ist Author (0=Ja)
+Länge Name (max 9);Länge PW (max 9);Name;PW;ist Author (0=Ja)
+usw..
+
+
+Text (max 1000) (bitte mit whitespaces auffüllen)
+Datum
+Länge Name (max 9); Name
+Anzahl Kommentare (max 9)
+Kommentar (max 140) (bitte mit whitespaces auffüllen)
+Datum
+Länge Name (max 9); Name
+Kommentar (max 140) (bitte mit whitespaces auffüllen)
+Datum
+Länge Name (max 9); Name
+usw...
+
+Dateien aufsteigeng 0-XX benennen
+ 
