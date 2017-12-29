@@ -3,6 +3,10 @@ package main
 import (
 	"net/http"
 	"html/template"
+	"os"
+	"fmt"
+	"io/ioutil"
+	"encoding/xml"
 )
 
 type login struct{
@@ -16,6 +20,22 @@ type beitrag struct{
 	AUTHOR string
 	COMMENTS []string
 }
+
+type post struct{
+	XMLName    xml.Name `xml:"post"`
+	text string   		`xml:"text"`
+	datum   string   	`xml:"datum"`
+	author string  		`xml:"author"`
+}
+
+
+type RecurlyPost struct {
+	XMLName     xml.Name `xml:"beitrag"`
+	Svs         []post   `xml:"post"`
+	//Description string   `xml:",innerxml"`
+}
+
+
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	c,_ := r.Cookie("username")
@@ -32,19 +52,34 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	t.Execute(w,p)
 
 	t, _ = template.ParseFiles("./ressources/html/beitraege.html")
+/*
+	file, err := os.Open("./ressources/storage/0.xml") // For read access.
+	if err != nil {
+		fmt.Printf("error: %v", err)
+		return
+	}
+	defer file.Close()
+	data, err := ioutil.ReadAll(file)
+	if err != nil {
+		fmt.Printf("error: %v", err)
+		return
+	}
+
+	v := RecurlyPost{}
+	err = xml.Unmarshal(data, &v)
+	if err != nil {
+		fmt.Printf("error: %v", err)
+		return
+	}
+	fmt.Println(v)
+
+*/
+
+
 	m := beitrag{TEXT: "Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!",
 				DATUM: "29.12.2017",
 				AUTHOR: "Author",
 				COMMENTS: []string{"Kommentator: Ich bin ein Kommentar! 29.12.2017\n","Kommentator 2: Ich bin noch ein Kommentar :P 29.12.2017\n"}}
 	t.Execute(w,m)
-
-	t, _ = template.ParseFiles("./ressources/html/beitraege.html")
-	m = beitrag{TEXT: "Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!",
-		DATUM: "29.12.2017",
-		AUTHOR: "Author",
-		COMMENTS: []string{"Kommentator: Ich bin ein Kommentar! 29.12.2017\n","Kommentator 2: Ich bin noch ein Kommentar :P 29.12.2017\n"}}
-	t.Execute(w,m)
-
-
 
 }
