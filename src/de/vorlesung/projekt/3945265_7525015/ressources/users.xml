@@ -8,7 +8,7 @@
 	<user>
         <Name>Eduard</Name>
         <Password>123zpgd0</Password>
-		<Author>1</Author>
+		<Author>0</Author>
     </user>
 	<user>
         <Name>Author</Name>
@@ -18,6 +18,6 @@
 	<user>
         <Name>Reader</Name>
         <Password>test</Password>
-		<Author>1</Author>
+		<Author>0</Author>
     </user>
 </users>

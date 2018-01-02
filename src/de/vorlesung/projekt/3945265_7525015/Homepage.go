@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"strconv"
+	"time"
 )
 
 type login struct{
@@ -45,29 +46,41 @@ type comment struct{
 
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	c,_ := r.Cookie("username")
-	c2,_:= r.Cookie("isAuthor")
-	t := template.New("Test")
-	t, _ = template.ParseFiles("./ressources/html/blog.html")
-	var modus string
-	if c2.Value == "0"{
-		modus = "Author"
+	c3,_:= r.Cookie("timestamp")
+	timeint, _ := strconv.ParseInt(c3.Value, 10, 0)
+	if time.Unix(timeint, 0).Before(time.Unix(timeint, 0).Add(time.Minute*15)){
+		c,_ := r.Cookie("username")
+		c2,_:= r.Cookie("isAuthor")
+		t := template.New("Test")
+		t, _ = template.ParseFiles("./ressources/html/blog.html")
+		var modus string
+		if c2.Value == "0"{
+			modus = "Author"
+		}else{
+			modus = "Leser"
+		}
+		p := login{USERNAME: c.Value, MODUS: modus}
+		t.Execute(w,p)
+
+		t, _ = template.ParseFiles("./ressources/html/beitraege.html")
+
+		files,_ := ioutil.ReadDir("./ressources/storage/")
+		filecount := len(files)
+		i:= 0
+		for i < filecount {
+			posts := readPosts(i)
+			m := beitragGen(posts)
+			t.Execute(w, m)
+			i++
+		}
 	}else{
-		modus = "Leser"
-	}
-	p := login{USERNAME: c.Value, MODUS: modus}
-	t.Execute(w,p)
-
-	t, _ = template.ParseFiles("./ressources/html/beitraege.html")
-
-	files,_ := ioutil.ReadDir("./ressources/storage/")
-	filecount := len(files)
-	i:= 0
-	for i < filecount {
-		posts := readPosts(i)
-		m := beitragGen(posts)
-		t.Execute(w, m)
-		i++
+		responseString := 	"<html>"+
+			"<body>"+
+			"<h1>Programmieren II - Blog</h1><br>"+
+			"Zugang verweigert "+"<a href='/'>Bitte Klicken</a>"+
+			"</body>"+
+			"</html>"
+		w.Write([]byte(responseString))
 	}
 
 
