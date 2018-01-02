@@ -14,7 +14,7 @@ func check(e error) {
 }
 
 
-type Recurlyservers struct {
+type Recurlyusers struct {
 	XMLName     xml.Name `xml:"users"`
 	Version     string   `xml:"version,attr"`
 	Svs         []user   `xml:"user"`
@@ -41,13 +41,12 @@ func readUsers() []user {
 			fmt.Printf("error: %v", err)
 			return users
 		}
-		v := Recurlyservers{}
+		v := Recurlyusers{}
 		err = xml.Unmarshal(data, &v)
 		if err != nil {
 			fmt.Printf("error: %v", err)
 			return users
 		}
-
 
 		fmt.Println(v)
 
