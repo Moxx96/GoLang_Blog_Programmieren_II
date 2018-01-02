@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users version="1">
+    <user>
+        <Name>Joerg</Name>
+        <Password>3264543</Password>
+		<Author>1</Author>
+    </user>
+	<user>
+        <Name>Eduard</Name>
+        <Password>123zpgd0</Password>
+		<Author>0</Author>
+    </user>
+	<user>
+        <Name>Author</Name>
+        <Password>test</Password>
+		<Author>1</Author>
+    </user>
+	<user>
+        <Name>Reader</Name>
+        <Password>test</Password>
+		<Author>0</Author>
+    </user>
+</users>

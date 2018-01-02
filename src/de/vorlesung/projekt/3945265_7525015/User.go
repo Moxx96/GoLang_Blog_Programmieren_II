@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"fmt"
 	"os"
+	"encoding/xml"
 )
 
 func check(e error) {
@@ -12,79 +13,45 @@ func check(e error) {
 	}
 }
 
-type user struct{
-	name string
-	pwd string
-	isAuthor string
+
+type Recurlyservers struct {
+	XMLName     xml.Name `xml:"users"`
+	Version     string   `xml:"version,attr"`
+	Svs         []user   `xml:"user"`
+}
+
+type user struct {
+	XMLName    xml.Name `xml:"user"`
+	Name string         `xml:"Name"`
+	Password   string   `xml:"Password"`
+	Author   string     `xml:"Author"`
 }
 
 func readUsers() []user {
-	sum := 0
-	offset := 3
-	dat, err := ioutil.ReadFile("./ressources/users.txt")
-	check(err)
-	fmt.Print(string(dat) + "\n")
-	f, err := os.Open("./ressources/users.txt")
-	check(err)
-
-	b0 := make([]byte, 1)
-	n0, err := f.Read(b0)
-	check(err)
-	fmt.Printf("%d bytes: %s\n", n0, string(b0))
-	count := int(b0[0]) - 48
-
 	var users []user
 
-	for sum < count {
-
-		_, err = f.Seek(int64(offset), 0)
-
-		b1 := make([]byte, 1)
-		n1, err := f.Read(b1)
-		check(err)
-		fmt.Printf("%d bytes: %s\n", n1, string(b1))
-
-		namelength := int(b1[0]) - 48
-		_, err = f.Seek(int64(offset+2), 0)
-		check(err)
-
-		b2 := make([]byte, 1)
-		n2, err := f.Read(b2)
-		check(err)
-		fmt.Printf("%d bytes: %s\n", n2, string(b2))
-
-		passlength := int(b2[0]) - 48
-
-		_, err = f.Seek(int64(offset+4), 0)
-
-		b3 := make([]byte, namelength)
-		n3, err := f.Read(b3)
-		check(err)
-		fmt.Printf("%d bytes: %s\n", n3, string(b3))
+		file, err := os.Open("./ressources/users.xml") // For read access.
+		if err != nil {
+			fmt.Printf("error: %v", err)
+			return users
+		}
+		defer file.Close()
+		data, err := ioutil.ReadAll(file)
+		if err != nil {
+			fmt.Printf("error: %v", err)
+			return users
+		}
+		v := Recurlyservers{}
+		err = xml.Unmarshal(data, &v)
+		if err != nil {
+			fmt.Printf("error: %v", err)
+			return users
+		}
 
 
-		_, err = f.Seek(int64(offset+5+namelength), 0)
+		fmt.Println(v)
 
-		b4 := make([]byte, passlength)
-		n4, err := f.Read(b4)
-		check(err)
-		fmt.Printf("%d bytes: %s\n", n4, string(b4))
-
-
-		_, err = f.Seek(int64(offset+6+namelength+passlength), 0)
-
-		b5 := make([]byte, 1)
-		n5, err := f.Read(b5)
-		check(err)
-		fmt.Printf("%d bytes: %s\n\n", n5, string(b5))
-
-		users = append(users, user{string(b3),string(b4),string(b5[0])})
-
-		offset = offset + 6 + namelength + passlength + 3
-		sum++
-	}
-	f.Close()
-
-	return users
-
+	return v.Svs
 }
+
+

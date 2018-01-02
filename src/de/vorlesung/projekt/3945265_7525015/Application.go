@@ -7,6 +7,7 @@ import (
 	"strings"
 	"fmt"
 	"time"
+	"encoding/xml"
 )
 
 
@@ -24,20 +25,22 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Print(username)
 		fmt.Print(password)
 		Users = readUsers()
-		compareUser := user{"0","0","5"}
+
+		var xmNull xml.Name
+		compareUser := user{xmNull,"","",""}
 		validUser := compareUser
 		for _, element := range Users{
-			if element.name == username{
-				if element.pwd == password{
+			if element.Name == username{
+				if element.Password == password{
 					validUser = element
 				}
 			}
 		}
 		if validUser != compareUser{
-			fmt.Print(validUser.isAuthor)
-			expiration := time.Now().Add(time.Hour)
-			cookie := http.Cookie{Name: "username", Value: validUser.name, Expires: expiration}
-			cookie2 := http.Cookie{Name: "isAuthor", Value: validUser.isAuthor, Expires: expiration}
+			fmt.Print(validUser.Author)
+			expiration := time.Now().Add(time.Hour/4)
+			cookie := http.Cookie{Name: "username", Value: validUser.Name, Expires: expiration}
+			cookie2 := http.Cookie{Name: "isAuthor", Value: validUser.Author, Expires: expiration}
 			http.SetCookie(w, &cookie)
 			http.SetCookie(w, &cookie2)
 			//homeHandler(w,r)
