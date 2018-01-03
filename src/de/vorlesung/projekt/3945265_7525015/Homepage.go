@@ -52,17 +52,25 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		c,_ := r.Cookie("username")
 		c2,_:= r.Cookie("isAuthor")
 		t := template.New("Test")
-		t, _ = template.ParseFiles("./ressources/html/blog.html")
+
 		var modus string
 		if c2.Value == "0"{
+			t, _ = template.ParseFiles("./ressources/html/blogAuthor.html")
 			modus = "Author"
 		}else{
+			t, _ = template.ParseFiles("./ressources/html/blogGast.html")
 			modus = "Leser"
 		}
+
 		p := login{USERNAME: c.Value, MODUS: modus}
 		t.Execute(w,p)
 
-		t, _ = template.ParseFiles("./ressources/html/beitraege.html")
+		if c2.Value == "0"{
+			t, _ = template.ParseFiles("./ressources/html/beitraegeAuthor.html")
+		}else{
+			t, _ = template.ParseFiles("./ressources/html/beitraegeGast.html")
+		}
+
 
 		files,_ := ioutil.ReadDir("./ressources/storage/")
 		filecount := len(files)
