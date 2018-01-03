@@ -9,7 +9,28 @@ import (
 	"time"
 	"encoding/xml"
 	"strconv"
+	"crypto/sha256"
+	"encoding/hex"
+	"crypto/md5"
 )
+func createsalt (pwd string) (string){						//Generiert ein Salt aus dem PW
+															//Wird beim erstellen von Accounts oder dem ändern des PW benötigt
+	hash := md5.New()
+	hash.Write([]byte(pwd))
+	salt := hex.EncodeToString(hash.Sum(nil))
+	return salt
+
+}
+
+func createHash (pwd string, salt string) (string){			//Generiert Passworthash aus passwort + Salt
+															//Wird beim erstellen von Accounts oder dem ändern des PW benötigt
+	salted := pwd + salt
+	hash := sha256.New()
+	hash.Write([]byte(salted))
+	pwdhash := hex.EncodeToString(hash.Sum(nil))
+
+	return pwdhash
+}
 
 
 func mainHandler(w http.ResponseWriter, r *http.Request) {
@@ -27,12 +48,23 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Print(password)
 		Users = readUsers()
 
+
+
+
+
 		var xmNull xml.Name
-		compareUser := user{xmNull,"","",""}
+		compareUser := user{xmNull,"","","", ""}
 		validUser := compareUser
 		for _, element := range Users{
 			if element.Name == username{
-				if element.Password == password{
+
+				salted := password + element.Salt				//Berechnen des Hashes von Passwort + Salt
+				hash := sha256.New()							//
+				hash.Write([]byte(salted)) 						//
+				pwdhash := hex.EncodeToString(hash.Sum(nil))	//Konvertieren von Typ byte zu string
+
+
+				if element.Password == pwdhash{
 					validUser = element
 				}
 			}

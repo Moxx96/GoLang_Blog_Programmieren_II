@@ -21,10 +21,11 @@ type Recurlyusers struct {
 }
 
 type user struct {
-	XMLName    xml.Name `xml:"user"`
-	Name string         `xml:"Name"`
-	Password   string   `xml:"Password"`
-	Author   string     `xml:"Author"`
+	XMLName    xml.Name 	`xml:"user"`
+	Name 		string      `xml:"Name"`
+	Password   	string 	`xml:"Password"`
+	Author  	string   	`xml:"Author"`
+	Salt 		string		`xml:"Salt"`
 }
 
 func readUsers() []user {
