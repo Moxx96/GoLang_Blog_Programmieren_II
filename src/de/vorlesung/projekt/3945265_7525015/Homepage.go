@@ -19,7 +19,7 @@ type login struct{
 type Recurlyposts struct {
 	XMLName     xml.Name `xml:posts"`
 	Version     string   `xml:"version,attr"`
-	Svs         []post  `xml:"post"`
+	Svs         []post   `xml:"post"`
 }
 
 type post struct {
@@ -29,6 +29,8 @@ type post struct {
 	AUTHOR   string      `xml:"AUTHOR"`
 	COMMENT   string     `xml:"COMMENT"`
 }
+
+
 
 type beitrag struct{
 	TEXT string
@@ -115,7 +117,7 @@ func readPosts(x int) []post{
 		return nil
 	}
 
-	fmt.Println(v)
+	//fmt.Println(v)
 
 
 	posts = v.Svs

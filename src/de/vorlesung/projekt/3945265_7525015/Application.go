@@ -49,9 +49,6 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 		Users = readUsers()
 
 
-
-
-
 		var xmNull xml.Name
 		compareUser := user{xmNull,"","","", ""}
 		validUser := compareUser
@@ -144,5 +141,6 @@ func main() {
 	http.HandleFunc("/guest/", guestHandler)
 	http.HandleFunc("/home/", homeHandler)
 	http.HandleFunc("/logout/",logoutHandler)
+	http.HandleFunc("/create/",createHandler)
 	log.Fatalln(http.ListenAndServeTLS(":4443","./ressources/certBlog.pem" ,"./ressources/keyBlog.pem",nil))
 }
