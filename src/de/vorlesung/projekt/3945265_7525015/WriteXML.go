@@ -25,6 +25,20 @@ type writepost struct {
 	COMMENT   string     `xml:"COMMENT"`
 }
 
+type users struct {
+	XMLName     xml.Name `xml:"users"`
+	Version     string   `xml:"version,attr"`
+	Svs         []user   `xml:"user"`
+}
+
+type writeuser struct {
+	Name 		string      `xml:"Name"`
+	Password   	string 	    `xml:"Password"`
+	Author  	string   	`xml:"Author"`
+	Salt 		string		`xml:"Salt"`
+}
+
+
 
 func createHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("method:", r.Method)
@@ -141,6 +155,40 @@ func commentHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 
+func passwordHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		t, _ := template.ParseFiles("./ressources/html/changePW.html")
+		t.Execute(w, nil)
+	}else{
+		r.ParseForm()
+		PW1 := strings.Join(r.Form["password1"],"")
+		PW2 := strings.Join(r.Form["password2"],"")
+		if PW1 != PW2{
+			responseString := 	"<html>"+
+				"<body>"+
+				"<h1>Programmieren II - Blog</h1><br>"+
+				"Passwörter stimmen nicht überein "+"<a href='/home'>Bitte Klicken</a>"+
+				"</body>"+
+				"</html>"
+			w.Write([]byte(responseString))
+		}else{
+			c,_:= r.Cookie("username")
+			username = c.Value
+			
+			//Hier muss das Passwort für den User aus dem Cookie in der users.xml geändert werden
+
+			responseString := 	"<html>"+
+				"<body>"+
+				"<h1>Programmieren II - Blog</h1><br>"+
+				"Passwort ändern funktioniert noch nicht "+"<a href='/home'>Bitte Klicken</a>"+
+				"</body>"+
+				"</html>"
+			w.Write([]byte(responseString))
+		}
+
+
+	}
+}
 
 
 
