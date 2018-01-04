@@ -45,9 +45,8 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			fmt.Printf("error: %v\n", err)
 		}
-		os.Stdout.Write([]byte(xml.Header))
-
-		os.Stdout.Write(output)
+		//os.Stdout.Write([]byte(xml.Header))
+		//os.Stdout.Write(output)
 
 		files,_ := ioutil.ReadDir("./ressources/storage/")
 		filecount := len(files)
@@ -73,8 +72,77 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(responseString))
 
 	}
-
-
-
 }
+
+func commentHandler(w http.ResponseWriter, r *http.Request) {
+	c2,_:= r.Cookie("isAuthor")
+	if r.Method == "GET" {
+		q := r.URL.Query()
+		count := q.Get("count")
+		cookie := http.Cookie{Name: "count", Value: count, Path: "/comment"}
+		http.SetCookie(w, &cookie)
+		t := template.New("Edit")
+		if c2.Value == "0"{
+			t, _ = template.ParseFiles("./ressources/html/commentAuthor.html")
+		}else{
+			t, _ = template.ParseFiles("./ressources/html/commentGast.html")
+		}
+		t.Execute(w,nil)
+	} else {
+		cc,_:= r.Cookie("count")
+		count,_ := strconv.Atoi(cc.Value)
+		r.ParseForm()
+		text := strings.Join(r.Form["post2"], "")
+		d := string(time.Now().Format("01.02.2006"))
+		var name string
+		if c2.Value == "0"{
+			c, _ := r.Cookie("username")
+			name= c.Value
+		}else{
+			name = strings.Join(r.Form["username"], "")
+		}
+		v:= beitragGen(readPosts(count),count)
+		v2 := &posts{Version: "1"}
+		l := len(v.COMMENTS)
+		sum := 0
+		v2.Svs = append(v2.Svs, writepost{v.TEXT,v.DATUM,v.AUTHOR,"0"})
+		for sum < l{
+			v2.Svs = append(v2.Svs, writepost{v.COMMENTS[sum].TEXT,v.COMMENTS[sum].DATUM,v.COMMENTS[sum].AUTHOR,"1"})
+			sum++
+		}
+		v2.Svs = append(v2.Svs,writepost{text,d,name,"1"})
+		output2, err := xml.MarshalIndent(v2, "  ", "    ")
+		if err != nil {
+			fmt.Printf("error: %v\n", err)
+		}
+		//os.Stdout.Write([]byte(xml.Header))
+		//os.Stdout.Write(output2)
+
+		path := "./ressources/storage/"+strconv.Itoa(count)+".xml"
+		var err3 = os.Remove(path)
+		if err3 != nil { return }
+		var _,err2 = os.Stat(path)
+		if os.IsNotExist(err2) {
+			var file, err2 = os.Create(path)
+			if err2 != nil { return }
+			defer file.Close()
+		}
+		ioutil.WriteFile(path,output2,0777)
+
+		responseString := 	"<html>"+
+			"<body>"+
+			"<h1>Programmieren II - Blog</h1><br>"+
+			"Kommentar erfolgreich erstellt "+"<a href='/home'>Bitte Klicken</a>"+
+			"</body>"+
+			"</html>"
+		w.Write([]byte(responseString))
+
+	}
+}
+
+
+
+
+
+
 

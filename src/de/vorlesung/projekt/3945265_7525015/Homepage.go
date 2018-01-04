@@ -36,6 +36,7 @@ type beitrag struct{
 	TEXT string
 	DATUM string
 	AUTHOR string
+	COUNT string
 	COMMENTS []comment
 }
 type comment struct{
@@ -63,7 +64,6 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 			t, _ = template.ParseFiles("./ressources/html/blogGast.html")
 			modus = "Leser"
 		}
-
 		p := login{USERNAME: c.Value, MODUS: modus}
 		t.Execute(w,p)
 
@@ -79,7 +79,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 		i:= 0
 		for i < filecount {
 			posts := readPosts(i)
-			m := beitragGen(posts)
+			m := beitragGen(posts, i)
 			t.Execute(w, m)
 			i++
 		}
@@ -125,7 +125,7 @@ func readPosts(x int) []post{
 	return posts
 }
 
-func beitragGen(p []post) beitrag{
+func beitragGen(p []post, x int) beitrag{
 	var bei beitrag
 	count :=len(p)
 	var com comment
@@ -138,6 +138,7 @@ func beitragGen(p []post) beitrag{
 			bei.TEXT = p[i].TEXT
 			bei.AUTHOR = p[i].AUTHOR
 			bei.DATUM = p[i].DATUM
+			bei.COUNT = strconv.Itoa(x)
 		}else if p[i].COMMENT == "1"{
 			com.TEXT = p[i].TEXT
 			com.DATUM = p[i].DATUM

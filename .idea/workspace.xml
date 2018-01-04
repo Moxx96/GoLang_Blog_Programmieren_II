@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8560c500-2617-4532-a1f4-353861b857df" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentAuthor.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Aufbau Users&amp;Storage.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go" />
       <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Homepage.go" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Homepage.go" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogAuthor.html" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogAuthor.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/test.go" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/WriteXML.go" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/WriteXML.go" />
+      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeAuthor.html" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeAuthor.html" />
+      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html" />
+      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage/0.xml" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage/0.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,8 +23,8 @@
       <file leaf-file-name="Application.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="39" />
+            <state relative-caret-position="340">
+              <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -31,18 +33,18 @@
       <file leaf-file-name="createBeitrag.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/createBeitrag.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Homepage.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Homepage.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Homepage.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="76" column="8" lean-forward="false" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="446">
+              <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
               <folding>
                 <element signature="e#14#114#0" expanded="true" />
               </folding>
@@ -50,14 +52,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WriteXML.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="beitraegeGast.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beitraegeAuthor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeAuthor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WriteXML.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/WriteXML.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="595">
+              <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
               <folding>
                 <element signature="e#14#125#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commentGast.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentGast.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commentAuthor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentAuthor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,41 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blogAuthor.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogAuthor.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blogGast.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogGast.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beitraegeGast.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            <state relative-caret-position="102">
+              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="10" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -118,8 +130,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go Application" />
-        <option value="HTML File" />
         <option value="Go File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -142,14 +154,18 @@
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/logout.html" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraege.html" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blog.html" />
-        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogGast.html" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogAuthor.html" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/createBeitrag.html" />
-        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Posts.go" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/WriteXML.go" />
+        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentGuest.html" />
+        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go" />
+        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeAuthor.html" />
+        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Homepage.go" />
+        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentAuthor.html" />
+        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentGast.html" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/WriteXML.go" />
       </list>
     </option>
@@ -346,9 +362,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/logout.html" />
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blog.html" />
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraege.html" />
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -416,14 +429,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blog.html" />
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraege.html" />
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogGast.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -448,45 +453,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/createBeitrag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Posts.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="36" column="39" lean-forward="false" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Homepage.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="76" column="8" lean-forward="false" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="31" />
-          <folding>
-            <element signature="e#14#114#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -498,12 +469,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/createBeitrag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentAuthor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentGast.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="74" column="38" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/WriteXML.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="595">
+          <caret line="47" column="45" lean-forward="true" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
           <folding>
             <element signature="e#14#125#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeAuthor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Homepage.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="61" column="28" lean-forward="true" selection-start-line="61" selection-start-column="28" selection-end-line="61" selection-end-column="28" />
+          <folding>
+            <element signature="e#14#114#0" expanded="true" />
           </folding>
         </state>
       </provider>
