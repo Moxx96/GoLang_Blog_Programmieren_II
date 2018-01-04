@@ -3,7 +3,8 @@
 <head>
 </head>
 <body>
-<table style="width:80%" border="1">
+<br>
+<table bgcolor="#f0ffff" style="width:80%" border="1">
     <colgroup>
         <col width="50%">
         <col width="50%">
@@ -17,12 +18,8 @@
         <td>{{.AUTHOR}}</td>
     </tr>
     <tr>
-        <td colspan="2">{{.COMMENTS}}</td>
-    </tr>
-    <tr>
-        <td><a href="/comment?count={{.COUNT}}">Kommentieren</a></td>
+        <td><a href="/comment/?count={{.COUNT}}">Kommentieren</a></td>
     </tr>
 </table>
-<br>
 </body>
 </html>

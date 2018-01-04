@@ -54,7 +54,8 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	if time.Unix(timeint, 0).Before(time.Unix(timeint, 0).Add(time.Minute*15)){
 		c,_ := r.Cookie("username")
 		c2,_:= r.Cookie("isAuthor")
-		t := template.New("Test")
+		t := template.New("Page")
+		t2 := template.New("Comment")
 
 		var modus string
 		if c2.Value == "0"{
@@ -73,14 +74,22 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 			t, _ = template.ParseFiles("./ressources/html/beitraegeGast.html")
 		}
 
+		t2, _ = template.ParseFiles("./ressources/html/comments.html")
+
 
 		files,_ := ioutil.ReadDir("./ressources/storage/")
 		filecount := len(files)
 		i:= 0
+		var j int
 		for i < filecount {
 			posts := readPosts(i)
 			m := beitragGen(posts, i)
 			t.Execute(w, m)
+			j = 0
+			for j < len(m.COMMENTS){
+				t2.Execute(w,comment{m.COMMENTS[j].TEXT,m.COMMENTS[j].DATUM,m.COMMENTS[j].AUTHOR})
+				j++
+			}
 			i++
 		}
 	}else{

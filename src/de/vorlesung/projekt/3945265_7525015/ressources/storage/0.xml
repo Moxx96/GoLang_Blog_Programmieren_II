@@ -29,4 +29,34 @@
           <AUTHOR>Reader</AUTHOR>
           <COMMENT>1</COMMENT>
       </post>
+      <post>
+          <TEXT>Ich bin ein kleiner TEst</TEXT>
+          <DATUM>01.04.2018</DATUM>
+          <AUTHOR>Author</AUTHOR>
+          <COMMENT>1</COMMENT>
+      </post>
+      <post>
+          <TEXT>Eyo Skeeeeeht :P</TEXT>
+          <DATUM>01.04.2018</DATUM>
+          <AUTHOR>Author</AUTHOR>
+          <COMMENT>1</COMMENT>
+      </post>
+      <post>
+          <TEXT>Oh Oh :PEEEE</TEXT>
+          <DATUM>01.04.2018</DATUM>
+          <AUTHOR>Author</AUTHOR>
+          <COMMENT>1</COMMENT>
+      </post>
+      <post>
+          <TEXT>Damn it</TEXT>
+          <DATUM>01.04.2018</DATUM>
+          <AUTHOR>Niemand</AUTHOR>
+          <COMMENT>1</COMMENT>
+      </post>
+      <post>
+          <TEXT>Nun aber dalli</TEXT>
+          <DATUM>01.04.2018</DATUM>
+          <AUTHOR>Igor</AUTHOR>
+          <COMMENT>1</COMMENT>
+      </post>
   </posts>

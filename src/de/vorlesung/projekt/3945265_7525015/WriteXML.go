@@ -90,10 +90,11 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 
 func commentHandler(w http.ResponseWriter, r *http.Request) {
 	c2,_:= r.Cookie("isAuthor")
+
 	if r.Method == "GET" {
 		q := r.URL.Query()
 		count := q.Get("count")
-		cookie := http.Cookie{Name: "count", Value: count, Path: "/comment"}
+		cookie := http.Cookie{Name: "count", Value: count, Path: "/comment/"}
 		http.SetCookie(w, &cookie)
 		t := template.New("Edit")
 		if c2.Value == "0"{
@@ -174,7 +175,7 @@ func passwordHandler(w http.ResponseWriter, r *http.Request) {
 		}else{
 			c,_:= r.Cookie("username")
 			username = c.Value
-			
+
 			//Hier muss das Passwort für den User aus dem Cookie in der users.xml geändert werden
 
 			responseString := 	"<html>"+

@@ -5,4 +5,10 @@
           <AUTHOR>Reader</AUTHOR>
           <COMMENT>0</COMMENT>
       </post>
+      <post>
+          <TEXT>Hihi ich kommentiere meinen eigen Text</TEXT>
+          <DATUM>01.04.2018</DATUM>
+          <AUTHOR>Reader</AUTHOR>
+          <COMMENT>1</COMMENT>
+      </post>
   </posts>
