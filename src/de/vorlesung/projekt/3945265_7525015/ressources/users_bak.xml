@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users version="1">
+    <user>
+        <Name>Joerg</Name>
+        <Password>eb4051b635a456f31507c6a055bb51c5fbc0dd12654023b2ba4d363ab141c989</Password>
+		<Salt>b0a995921a9749f2307ff41157965e2f</Salt>
+		<Author>0</Author>
+    </user>
+	<user>
+        <Name>Eduard</Name>
+        <Password>d949912ba1aa41e7e6209a9a51012d9e525822d8bb3dc978afc8adb92fc32452</Password>
+		<Salt>3f5d9aa4216f9eaecaa2309ad87b5ae2</Salt>
+		<Author>0</Author>
+    </user>
+	<user>
+        <Name>Author</Name>
+        <Password>1ff557be460525377cf810a16766d4a5825446ef831549c61c77a0f01069c37b</Password>
+		<Salt>098f6bcd4621d373cade4e832627b4f6</Salt>
+		<Author>0</Author>
+    </user>
+	<user>
+        <Name>Reader</Name>
+        <Password>1ff557be460525377cf810a16766d4a5825446ef831549c61c77a0f01069c37b</Password>
+		<Salt>098f6bcd4621d373cade4e832627b4f6</Salt>
+		<Author>0</Author>
+    </user>
+</users>

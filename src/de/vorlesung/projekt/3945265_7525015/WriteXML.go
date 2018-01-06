@@ -28,7 +28,7 @@ type writepost struct {
 type users struct {
 	XMLName     xml.Name `xml:"users"`
 	Version     string   `xml:"version,attr"`
-	Svs         []user   `xml:"user"`
+	Svs         []writeuser   `xml:"user"`
 }
 
 type writeuser struct {
@@ -175,13 +175,46 @@ func passwordHandler(w http.ResponseWriter, r *http.Request) {
 		}else{
 			c,_:= r.Cookie("username")
 			username = c.Value
+			salt := createsalt(PW1)
+			hash := createHash(PW1, salt)
+
+			actualUsers := readUsers()
+			v2 := &users{Version: "1"}
+			i:= 0
+			for i < len(actualUsers){
+				if actualUsers[i].Name != username{
+					v2.Svs = append(v2.Svs, writeuser{actualUsers[i].Name,actualUsers[i].Password,actualUsers[i].Author,actualUsers[i].Salt})
+				}else{
+					v2.Svs = append(v2.Svs, writeuser{actualUsers[i].Name,hash,actualUsers[i].Author,salt})
+				}
+				i++
+			}
+
+			output2, err := xml.MarshalIndent(v2, "  ", "    ")
+			if err != nil {
+				fmt.Printf("error: %v\n", err)
+			}
+			//os.Stdout.Write([]byte(xml.Header))
+			//os.Stdout.Write(output2)
+
+			path := "./ressources/users.xml"
+			var err3 = os.Remove(path)
+			if err3 != nil { return }
+			var _,err2 = os.Stat(path)
+			if os.IsNotExist(err2) {
+				var file, err2 = os.Create(path)
+				if err2 != nil { return }
+				defer file.Close()
+			}
+			ioutil.WriteFile(path,output2,0777)
+
 
 			//Hier muss das Passwort für den User aus dem Cookie in der users.xml geändert werden
 
 			responseString := 	"<html>"+
 				"<body>"+
 				"<h1>Programmieren II - Blog</h1><br>"+
-				"Passwort ändern funktioniert noch nicht "+"<a href='/home'>Bitte Klicken</a>"+
+				"Passwort erfolgreich geändert "+"<a href='/home'>Bitte Klicken</a>"+
 				"</body>"+
 				"</html>"
 			w.Write([]byte(responseString))
