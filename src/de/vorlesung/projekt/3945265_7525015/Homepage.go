@@ -78,19 +78,18 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 
 		files,_ := ioutil.ReadDir("./ressources/storage/")
-		filecount := len(files)
-		i:= 0
+		filecount := len(files)-1
 		var j int
-		for i < filecount {
-			posts := readPosts(i)
-			m := beitragGen(posts, i)
+		for 0 <= filecount {
+			posts := readPosts(filecount)
+			m := beitragGen(posts, filecount)
 			t.Execute(w, m)
-			j = 0
-			for j < len(m.COMMENTS){
+			j = len(m.COMMENTS)-1
+			for 0 <= j{
 				t2.Execute(w,comment{m.COMMENTS[j].TEXT,m.COMMENTS[j].DATUM,m.COMMENTS[j].AUTHOR})
-				j++
+				j--
 			}
-			i++
+			filecount--
 		}
 	}else{
 		responseString := 	"<html>"+
