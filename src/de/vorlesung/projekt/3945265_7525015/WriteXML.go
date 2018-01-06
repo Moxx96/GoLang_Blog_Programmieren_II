@@ -225,6 +225,68 @@ func passwordHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 
+func editHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		q := r.URL.Query()
+		count := q.Get("count")
+		cookie := http.Cookie{Name: "count", Value: count, Path: "/edit/"}
+		http.SetCookie(w, &cookie)
+		t := template.New("Edit")
+		type preview struct{
+			TEXT string
+		}
+		countINT,_:= strconv.Atoi(count)
+		v:= beitragGen(readPosts(countINT),countINT)
+		var pre preview
+		pre.TEXT = v.TEXT
+		t, _ = template.ParseFiles("./ressources/html/editBeitrag.html")
+		t.Execute(w,pre)
+	} else {
+		//Edit magic
+		cc,_:= r.Cookie("count")
+		count,_ := strconv.Atoi(cc.Value)
+		r.ParseForm()
+		text := strings.Join(r.Form["post3"], "")
+
+		v:= beitragGen(readPosts(count),count)
+		v2 := &posts{Version: "1"}
+
+		l := len(v.COMMENTS)
+		sum := 0
+		v2.Svs = append(v2.Svs, writepost{text,v.DATUM,v.AUTHOR,"0"})
+		for sum < l{
+			v2.Svs = append(v2.Svs, writepost{v.COMMENTS[sum].TEXT,v.COMMENTS[sum].DATUM,v.COMMENTS[sum].AUTHOR,"1"})
+			sum++
+		}
+		output2, err := xml.MarshalIndent(v2, "  ", "    ")
+		if err != nil {
+			fmt.Printf("error: %v\n", err)
+		}
+		//os.Stdout.Write([]byte(xml.Header))
+		//os.Stdout.Write(output2)
+
+		path := "./ressources/storage/"+strconv.Itoa(count)+".xml"
+		var err3 = os.Remove(path)
+		if err3 != nil { return }
+		var _,err2 = os.Stat(path)
+		if os.IsNotExist(err2) {
+			var file, err2 = os.Create(path)
+			if err2 != nil { return }
+			defer file.Close()
+		}
+		ioutil.WriteFile(path,output2,0777)
+
+		responseString := 	"<html>"+
+			"<body>"+
+			"<h1>Programmieren II - Blog</h1><br>"+
+			"Beitrag erfolgreich bearbeitet "+"<a href='/home'>Bitte Klicken</a>"+
+			"</body>"+
+			"</html>"
+		w.Write([]byte(responseString))
+
+	}
+}
+
 
 
 

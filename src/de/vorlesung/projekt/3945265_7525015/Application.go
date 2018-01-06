@@ -143,6 +143,7 @@ func main() {
 	http.HandleFunc("/logout/",logoutHandler)
 	http.HandleFunc("/create/",createHandler)
 	http.HandleFunc("/comment/",commentHandler)
+	http.HandleFunc("/edit/",editHandler)
 	http.HandleFunc("/changePW/",passwordHandler)
 	log.Fatalln(http.ListenAndServeTLS(":4443","./ressources/certBlog.pem" ,"./ressources/keyBlog.pem",nil))
 }
