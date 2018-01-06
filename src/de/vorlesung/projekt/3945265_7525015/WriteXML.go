@@ -224,6 +224,58 @@ func passwordHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func deleteHandler(w http.ResponseWriter, r *http.Request) {
+	q := r.URL.Query()
+	count,_:= strconv.Atoi(q.Get("count"))
+
+	files,_ := ioutil.ReadDir("./ressources/storage/")
+	filecount := len(files)
+
+	for count < filecount-1{
+		v:= beitragGen(readPosts(count+1),count+1)
+		v2 := &posts{Version: "1"}
+
+		l := len(v.COMMENTS)
+		sum := 0
+		v2.Svs = append(v2.Svs, writepost{v.TEXT,v.DATUM,v.AUTHOR,"0"})
+		for sum < l{
+			v2.Svs = append(v2.Svs, writepost{v.COMMENTS[sum].TEXT,v.COMMENTS[sum].DATUM,v.COMMENTS[sum].AUTHOR,"1"})
+			sum++
+		}
+		output2, err := xml.MarshalIndent(v2, "  ", "    ")
+		if err != nil {
+			fmt.Printf("error: %v\n", err)
+		}
+		path := "./ressources/storage/"+strconv.Itoa(count)+".xml"
+		var err3 = os.Remove(path)
+		if err3 != nil { return }
+		var _,err2 = os.Stat(path)
+		if os.IsNotExist(err2) {
+			var file, err2 = os.Create(path)
+			if err2 != nil { return }
+			defer file.Close()
+		}
+		ioutil.WriteFile(path,output2,0777)
+		count++
+	}
+
+	path := "./ressources/storage/"+strconv.Itoa(filecount-1)+".xml"
+	var err3 = os.Remove(path)
+	if err3 != nil { return }
+
+	responseString := 	"<html>"+
+		"<body>"+
+		"<h1>Programmieren II - Blog</h1><br>"+
+		"Beitrag erfolgreich gelöscht "+"<a href='/home'>Bitte Klicken</a>"+
+		"</body>"+
+		"</html>"
+	w.Write([]byte(responseString))
+
+
+
+}
+
+
 
 func editHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {

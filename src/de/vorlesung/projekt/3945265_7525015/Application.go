@@ -144,6 +144,7 @@ func main() {
 	http.HandleFunc("/create/",createHandler)
 	http.HandleFunc("/comment/",commentHandler)
 	http.HandleFunc("/edit/",editHandler)
+	http.HandleFunc("/delete/",deleteHandler)
 	http.HandleFunc("/changePW/",passwordHandler)
 	log.Fatalln(http.ListenAndServeTLS(":4443","./ressources/certBlog.pem" ,"./ressources/keyBlog.pem",nil))
 }

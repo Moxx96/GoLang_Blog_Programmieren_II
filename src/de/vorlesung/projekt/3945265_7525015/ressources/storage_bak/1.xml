@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<posts version="1">
+    <post>
+        <TEXT>Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text! Ich bin Blog Text!
+</TEXT>
+        <DATUM>29.12.2017</DATUM>
+		<AUTHOR>Author</AUTHOR>
+		<COMMENT>0</COMMENT>
+    </post>
+	<post>
+        <TEXT>Nochmal Kommentiert! Nochmal Kommentiert! Nochmal Kommentiert! Nochmal Kommentiert! Nochmal Kommentiert!Nochmal Kommentiert! Nochmal Komment</TEXT>
+        <DATUM>29.12.2017</DATUM>
+		<AUTHOR>Mannfred</AUTHOR>
+		<COMMENT>1</COMMENT>
+    </post>
+	<post>
+        <TEXT>Nochmal Kommentiert! Nochmal Kommentiert! Nochmal Kommentiert! Nochmal Kommentiert! Nochmal Kommentiert!Nochmal Kommentiert! Nochmal Komment</TEXT>
+        <DATUM>30.12.2017</DATUM>
+		<AUTHOR>Gisela</AUTHOR>
+		<COMMENT>1</COMMENT>
+    </post>
+</posts>
