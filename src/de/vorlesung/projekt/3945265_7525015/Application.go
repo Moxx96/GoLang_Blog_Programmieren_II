@@ -3,11 +3,15 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 )
 
 
 
 func main() {
+	if _, err := os.Stat("./ressources/storage"); os.IsNotExist(err) {
+		os.Mkdir("./ressources/storage", os.ModePerm)
+	}
 	http.HandleFunc("/", loginHandler) 		 	 	//Öffnet Login Page  (Login.go)
 	http.HandleFunc("/guest/", guestHandler) 		//Setzt Gast Cookie und leitet auf home weiter (Login.go)
 	http.HandleFunc("/home/", homeHandler)   		//Hier werden alle Beiträge angezeigt (Homepage.go)
