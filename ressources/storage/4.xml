@@ -1,0 +1,14 @@
+  <posts version="1">
+      <post>
+          <TEXT>Und auch dieser Beitrag ist ein Werk des Authors xD</TEXT>
+          <DATUM>07.01.2018</DATUM>
+          <AUTHOR>Author</AUTHOR>
+          <COMMENT>0</COMMENT>
+      </post>
+      <post>
+          <TEXT>Voll nervig.</TEXT>
+          <DATUM>07.01.2018</DATUM>
+          <AUTHOR>Ninokuni</AUTHOR>
+          <COMMENT>1</COMMENT>
+      </post>
+  </posts>

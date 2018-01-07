@@ -6,27 +6,27 @@
           <Salt>42f749ade7f9e195bf475f37a44cafcb</Salt>
       </user>
       <user>
-          <Name>Joerg</Name>
-          <Password>eb4051b635a456f31507c6a055bb51c5fbc0dd12654023b2ba4d363ab141c989</Password>
-          <Author>0</Author>
-          <Salt>b0a995921a9749f2307ff41157965e2f</Salt>
-      </user>
-      <user>
-          <Name>Eduard</Name>
-          <Password>d949912ba1aa41e7e6209a9a51012d9e525822d8bb3dc978afc8adb92fc32452</Password>
-          <Author>0</Author>
-          <Salt>3f5d9aa4216f9eaecaa2309ad87b5ae2</Salt>
-      </user>
-      <user>
           <Name>Author</Name>
-          <Password>1ff557be460525377cf810a16766d4a5825446ef831549c61c77a0f01069c37b</Password>
+          <Password>25bb7f91610042545a13a45a873d693c7cc65ad8d50f029e36d45c45c258599c</Password>
           <Author>0</Author>
-          <Salt>098f6bcd4621d373cade4e832627b4f6</Salt>
+          <Salt>42f749ade7f9e195bf475f37a44cafcb</Salt>
       </user>
       <user>
-          <Name>Reader</Name>
-          <Password>1ff557be460525377cf810a16766d4a5825446ef831549c61c77a0f01069c37b</Password>
+          <Name>Maxi</Name>
+          <Password>3e63c4e6548d282eaa22b277ab6748d19c6fd120387da25c6c9b6883df7011d7</Password>
           <Author>0</Author>
-          <Salt>098f6bcd4621d373cade4e832627b4f6</Salt>
+          <Salt>16158d257a69ce4ab10a7bd711dfd7a4</Salt>
+      </user>
+      <user>
+          <Name>Niklas</Name>
+          <Password>f83b37be8b1bad7430e3c774da5a8f10ec01ef7917f31f6fdc5bb751711d601e</Password>
+          <Author>0</Author>
+          <Salt>569708a881d61badded4fad3cab58e5a</Salt>
+      </user>
+      <user>
+          <Name>AnimeFreak384</Name>
+          <Password>c78d5c9bd13e5a090c0973d189c2a90c7d91b636a85051e737d2ce3c863d455f</Password>
+          <Author>0</Author>
+          <Salt>a15df0a74a4622863ab20dd35f4d3eb1</Salt>
       </user>
   </users>

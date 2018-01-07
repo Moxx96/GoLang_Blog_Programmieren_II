@@ -1,8 +1,0 @@
-User: Author
-PW: test
-
-
-User: Reader
-PW: test
-
-oder siehe Users.txt

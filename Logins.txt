@@ -1,0 +1,14 @@
+User: TestUser  (nicht verändern, wird für UnitTest verwendet)
+PW: Password123
+
+User: Author
+PW: Password123
+
+User: Maxi
+PW: regenbogen
+
+User: Niklas
+PW: Übern8tung
+
+User: AnimeFreak384
+PW: animerulez

@@ -64,7 +64,7 @@ func createHandler(w http.ResponseWriter, r *http.Request) {
 		r.ParseForm()
 		text := strings.Join(r.Form["post1"], "")										//Eingegebenen Text speichern
 		c, _ := r.Cookie("username")													//Username aus Cookie lesen
-		d := string(time.Now().Format("01.02.2006"))									//Aktuelles Datum als String speichern
+		d := string(time.Now().Format("02.01.2006"))									//Aktuelles Datum als String speichern
 
 
 		v := &posts{Version: "1"}															//Neue Post Referenz anlegen
@@ -121,7 +121,7 @@ func commentHandler(w http.ResponseWriter, r *http.Request) {
 		count,_ := strconv.Atoi(cc.Value)										//in INT wandeln
 		r.ParseForm()
 		text := strings.Join(r.Form["post2"], "")							//Eingegeben Text auslesen
-		d := string(time.Now().Format("01.02.2006"))						//Aktuelles Datum auslesen
+		d := string(time.Now().Format("02.01.2006"))						//Aktuelles Datum auslesen
 		var name string
 		if c2.Value == "0"{														//Entweder Authornamen
 			c, _ := r.Cookie("username")
