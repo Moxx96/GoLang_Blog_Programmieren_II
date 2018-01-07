@@ -1,5 +1,5 @@
 package main
-
+//Matrikelnummern: 3945265, 7525015
 import (
 	"io/ioutil"
 	"fmt"
@@ -126,8 +126,6 @@ func passwordHandler(w http.ResponseWriter, r *http.Request) {
 				"</html>"
 			w.Write([]byte(responseString))
 		}
-
-
 	}
 }
 

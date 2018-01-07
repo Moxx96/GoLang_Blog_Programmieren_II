@@ -1,5 +1,5 @@
 package main
-
+//Matrikelnummern: 3945265, 7525015
 import (
 	"net/http"
 	"time"
@@ -36,7 +36,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if validUser != compareUser{							//Falls ein gültiger USer gefunden wurde
 			//fmt.Print(validUser.Author)
-			expiration := time.Unix(time.Now().Add(time.Minute*75).Unix(),time.Now().Add(time.Minute*15).UnixNano())	//Setze Abluafzeit für Cookies
+			expiration := time.Unix(time.Now().Add(time.Minute*time.Duration(timeout)).Unix(),0)	//Setze Abluafzeit für Cookies
 			cookie := http.Cookie{Name: "username", Value: validUser.Name, Expires: expiration, Path: "/"}
 			cookie2 := http.Cookie{Name: "isAuthor", Value: validUser.Author, Expires: expiration, Path: "/"}
 			http.SetCookie(w, &cookie)
@@ -63,7 +63,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func guestHandler(w http.ResponseWriter, r *http.Request) {			//Wird als anmelden geklickt
-	expiration := time.Unix(time.Now().Add(time.Minute*75).Unix(),0)
+	expiration := time.Unix(time.Now().Add(time.Minute*time.Duration(timeout)).Unix(),0)
 	cookie := &http.Cookie{Name: "username", Value: "Guest", Expires: expiration, Path: "/"}
 	cookie2 := &http.Cookie{Name: "isAuthor", Value: "1", Expires: expiration , Path: "/"}
 	http.SetCookie(w, cookie)

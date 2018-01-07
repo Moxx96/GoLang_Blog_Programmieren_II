@@ -1,14 +1,19 @@
 package main
-
+//Matrikelnummern: 3945265, 7525015
 import (
 	"log"
 	"net/http"
 	"os"
+	"flag"
 )
 
-
+var timeout int64
 
 func main() {
+	portPtr := flag.String("port","4443","define port")
+	timeoutPtr := flag.Int64("timeout",15,"timeout in minutes")
+	flag.Parse()
+	timeout = *timeoutPtr
 	if _, err := os.Stat("./ressources/storage"); os.IsNotExist(err) {
 		os.Mkdir("./ressources/storage", os.ModePerm)
 	}
@@ -21,5 +26,5 @@ func main() {
 	http.HandleFunc("/edit/",editHandler)			//Einen Beitrag berabeiten (Posts.go)
 	http.HandleFunc("/delete/",deleteHandler)		//Einen Beitrag löschen (Posts.go)
 	http.HandleFunc("/changePW/",passwordHandler)	//Passwort ändern (User.go)
-	log.Fatalln(http.ListenAndServeTLS(":4443","./ressources/certBlog.pem" ,"./ressources/keyBlog.pem",nil))  //Server mit HTTPS starten
+	log.Fatalln(http.ListenAndServeTLS(":"+*portPtr,"./ressources/certBlog.pem" ,"./ressources/keyBlog.pem",nil))  //Server mit HTTPS starten
 }

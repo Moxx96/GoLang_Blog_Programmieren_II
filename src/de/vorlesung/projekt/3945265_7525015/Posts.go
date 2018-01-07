@@ -1,5 +1,5 @@
 package main
-
+//Matrikelnummern: 3945265, 7525015
 import (
 	"strings"
 	"time"
