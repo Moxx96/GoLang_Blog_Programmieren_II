@@ -1,5 +1,11 @@
   <users version="1">
       <user>
+          <Name>TestUser</Name>
+          <Password>25bb7f91610042545a13a45a873d693c7cc65ad8d50f029e36d45c45c258599c</Password>
+          <Author>0</Author>
+          <Salt>42f749ade7f9e195bf475f37a44cafcb</Salt>
+      </user>
+      <user>
           <Name>Joerg</Name>
           <Password>eb4051b635a456f31507c6a055bb51c5fbc0dd12654023b2ba4d363ab141c989</Password>
           <Author>0</Author>
