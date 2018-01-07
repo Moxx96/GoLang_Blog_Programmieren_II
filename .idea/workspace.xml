@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8560c500-2617-4532-a1f4-353861b857df" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Checkliste.pdf" afterPath="$PROJECT_DIR$/Checkliste.pdf" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/certBlog.pem" afterPath="$PROJECT_DIR$/ressources/certBlog.pem" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeAuthor.html" afterPath="$PROJECT_DIR$/ressources/html/beitraegeAuthor.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/beitraegeGast.html" afterPath="$PROJECT_DIR$/ressources/html/beitraegeGast.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogAuthor.html" afterPath="$PROJECT_DIR$/ressources/html/blogAuthor.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/blogGast.html" afterPath="$PROJECT_DIR$/ressources/html/blogGast.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/changePW.html" afterPath="$PROJECT_DIR$/ressources/html/changePW.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentAuthor.html" afterPath="$PROJECT_DIR$/ressources/html/commentAuthor.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/commentGast.html" afterPath="$PROJECT_DIR$/ressources/html/commentGast.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/comments.html" afterPath="$PROJECT_DIR$/ressources/html/comments.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/createBeitrag.html" afterPath="$PROJECT_DIR$/ressources/html/createBeitrag.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/editBeitrag.html" afterPath="$PROJECT_DIR$/ressources/html/editBeitrag.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/html/login.html" afterPath="$PROJECT_DIR$/ressources/html/login.html" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/keyBlog.pem" afterPath="$PROJECT_DIR$/ressources/keyBlog.pem" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage/0.xml" afterPath="$PROJECT_DIR$/ressources/storage/0.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage/1.xml" afterPath="$PROJECT_DIR$/ressources/storage/1.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage/2.xml" afterPath="$PROJECT_DIR$/ressources/storage/2.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage/3.xml" afterPath="$PROJECT_DIR$/ressources/storage/3.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage_bak/0.xml" afterPath="$PROJECT_DIR$/ressources/storage_bak/0.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage_bak/1.xml" afterPath="$PROJECT_DIR$/ressources/storage_bak/1.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage_bak/2.xml" afterPath="$PROJECT_DIR$/ressources/storage_bak/2.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/storage_bak/3.xml" afterPath="$PROJECT_DIR$/ressources/storage_bak/3.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/users.xml" afterPath="$PROJECT_DIR$/ressources/users.xml" />
-      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/ressources/users_bak.xml" afterPath="$PROJECT_DIR$/ressources/users_bak.xml" />
+      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Crypto_test.go" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Crypto_test.go" />
+      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Posts_test.go" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Posts_test.go" />
+      <change beforePath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/User_test.go" afterPath="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/User_test.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,8 +18,8 @@
       <file leaf-file-name="Application.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="35" />
               <folding>
                 <element signature="e#49#92#0" expanded="true" />
               </folding>
@@ -52,10 +30,10 @@
       <file leaf-file-name="Crypto_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Crypto_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="17">
+              <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
               <folding>
-                <element signature="e#14#73#0" expanded="true" />
+                <element signature="e#49#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,13 +83,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Posts_test.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Posts_test.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Posts_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
               <folding>
-                <element signature="e#14#100#0" expanded="true" />
+                <element signature="e#49#135#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,13 +115,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User_test.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User_test.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/User_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="17">
+              <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
               <folding>
-                <element signature="e#14#122#0" expanded="true" />
+                <element signature="e#49#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -206,10 +184,10 @@
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Login.go" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Tests.go" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application_test.go" />
+        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Crypto_test.go" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Posts_test.go" />
         <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/User_test.go" />
-        <option value="$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go" />
       </list>
     </option>
   </component>
@@ -219,7 +197,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-64" />
     <option name="y" value="-16" />
     <option name="width" value="1134" />
@@ -419,9 +397,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -613,40 +592,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Application.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="35" />
           <folding>
             <element signature="e#49#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/User_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="e#14#122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Crypto_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="17">
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
           <folding>
-            <element signature="e#14#73#0" expanded="true" />
+            <element signature="e#49#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/Posts_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
           <folding>
-            <element signature="e#14#100#0" expanded="true" />
+            <element signature="e#49#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/vorlesung/projekt/3945265_7525015/User_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding>
+            <element signature="e#49#157#0" expanded="true" />
           </folding>
         </state>
       </provider>
